@@ -41,7 +41,7 @@ button:active {
 }
 
 #display-box {
-  height: 12vh;
+  height: 14vh;
   cursor: default;
   text-align: right;
   padding: 1vh 1vh 0 1vh;
