@@ -13,6 +13,8 @@ let resultShowing = false;
 comma.onclick = () => {
   if (display.innerHTML.match(/\./)) {
     return;
+  } else if (display.innerHTML == '') {
+    display.innerHTML = '0.';
   } else {
     display.innerHTML += '.';
   }
