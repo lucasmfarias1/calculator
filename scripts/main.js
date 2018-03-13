@@ -8,6 +8,8 @@ const equals = document.querySelector('#equals');
 const negate = document.querySelector('#negate');
 const comma = document.querySelector('#comma');
 
+let resultShowing = false;
+
 comma.onclick = () => {
   if (display.innerHTML.match(/\./)) {
     return;
@@ -46,7 +48,15 @@ operators.forEach((button) => {
 
 numButtons.forEach((button) => {
   button.onclick = (e) => {
+    if (resultShowing == true) {
+      display.innerHTML = '';
+      resultShowing = false;
+    }
     display.innerHTML += e.target.innerHTML;
+    if (display.innerHTML.length > 1 &&
+        display.innerHTML.match(/^0\d/)) {
+      display.innerHTML = display.innerHTML.slice(1);
+    }
   }
 });
 
@@ -58,8 +68,8 @@ equals.onclick = () => {
 
   display.innerHTML = operate(operator, a, b);
   operationDisplay.innerHTML = '';
+  resultShowing = true;
 };
-
 
 //Core calculating functions
 
