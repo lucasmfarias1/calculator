@@ -97,7 +97,6 @@ function getResult() {
 
 function inputSomething(e) {
   const key = document.querySelector(`button[data-key="${e.keyCode}"]`);
-  console.log(key.id);
   if (key.getAttribute('class').match('number')) {
     inputNumber(e);
   } else if (key.getAttribute('class').match('operator')) {
